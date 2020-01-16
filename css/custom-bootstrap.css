@@ -1,0 +1,36 @@
+@media (min-width: 768px) {
+  .rodapeDesktop {
+      display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .rodapeMobile {
+      display: none;
+  }
+}
+
+.popover-title-primary {
+  padding: 8px 14px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #fff;
+  background-color: #428bca;
+  border-color: #428bca;
+  border-bottom: 1px solid #428bca;
+  border-radius: 5px 5px 0 0;
+}
+.popover-title-success {
+  padding: 8px 14px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+  border-bottom: 1px solid #5cb85c;
+  border-radius: 5px 5px 0 0;
+}

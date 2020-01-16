@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/jquery-2.2.3.js">
+    </script>
+    <script>
+        function getFormData(form){
+            var unindexed_array = form.serializeArray();
+            var indexed_array = {};
+
+            $.map(unindexed_array, function(n, i){
+                indexed_array[n['name']] = n['value'];
+            });
+
+            return indexed_array;
+        }
+
+        window.onload = function() {
+            $("#sbm").click(function() {
+                $.post("API/act.php", 
+                    getFormData($("#form")),
+                    function(data, status) {
+                        alert("Data: " + data + "\nStatus: " + status);
+                    }
+                );
+            });
+        };
+    </script>
+    <title>Bileux</title>
+</head>
+<body>
+    <form id="form">
+        <input name="name"/><br/>
+        <input name="email" /><br/>
+        <input name="passwd"/><br/>
+        <input name="confirmation_interval"/><br/>
+        <input name="deadline"/><br/>
+        <input name="message"/><br/>
+        <input name="action" value="register_new_user" type="hidden"/><br/>
+        <input id="sbm" type="button" value="REGISTRAR"/>
+    </form>
+</body>
+</html>
